@@ -1,0 +1,6 @@
+{
+  "id": "markdown-table",
+  "name": "markdown-table",
+  "srcdoc": "./build/index.html",
+  "fieldTypes": ["Object"]
+}
