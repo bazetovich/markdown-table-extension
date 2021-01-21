@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import MdEditor from "react-markdown-editor-lite";
+import "react-markdown-editor-lite/lib/index.css";
+import Button from "@contentful/forma-36-react-components/dist/components/Button";
+
 import TableInner from "../TableInner/TableInner";
 import {
   getValueByColCount,
@@ -12,10 +16,6 @@ import {
   MAX_COL,
   MIN_COL,
 } from "../../app.utils";
-
-import MdEditor from "react-markdown-editor-lite";
-// import style manually
-import "react-markdown-editor-lite/lib/index.css";
 
 export const TableEditor = ({ value, onValueChange }) => {
   const [curCell, setCurCell] = useState();
@@ -52,6 +52,10 @@ export const TableEditor = ({ value, onValueChange }) => {
     if (curCell) {
       onValueChange(updateValue(value, text, curCell));
     }
+  };
+
+  const handleMDHide = () => {
+    setCurCell(null);
   };
 
   return (
@@ -103,6 +107,15 @@ export const TableEditor = ({ value, onValueChange }) => {
             }}
             style={{ height: "220px" }}
           />
+          <div style={{ height: "1rem" }} />
+          <Button
+            onClick={handleMDHide}
+            buttonType="muted"
+            icon="ChevronUp"
+            size="small"
+          >
+            hide
+          </Button>
         </>
       )}
     </div>

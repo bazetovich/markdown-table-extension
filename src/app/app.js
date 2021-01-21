@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "@contentful/forma-36-react-components/dist/styles.css";
 import TableEditor from "./components/TableEditor/TableEditor";
 import "../index.css";
 import { getInitialValue } from "./app.utils";
